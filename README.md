@@ -31,6 +31,25 @@ plus recent — d'ou « Random yapping » affiche comme dernier billet.
 Le fichier sort en `.rss`, extension pour laquelle GitHub Pages renvoie
 `application/rss+xml; charset=utf-8`.
 
+Le workflow tourne toutes les heures et ne commite que si les articles ont
+reellement change — aucun commit a vide.
+
+## Le heartbeat
+
+GitHub desactive les workflows planifies apres **60 jours sans activite** sur
+le depot. Comme on ne commite qu'a la parution d'un billet, et que PNC publie
+de façon tres irreguliere, deux mois de silence suffiraient a arreter le cron.
+Le miroir se figerait alors sans rien signaler — exactement le symptome qu'on
+cherche a eviter.
+
+Le workflow commite donc un fichier `.heartbeat` (un simple horodatage, a la
+racine, non publie) des que le dernier commit date de plus de
+`HEARTBEAT_AFTER_DAYS` jours, fixe a 50. La marge sous les 60 jours absorbe les
+reports de cron que GitHub applique en periode de charge.
+
+En regime normal ce fichier ne bouge jamais : un billet publie fait un vrai
+commit, qui remet le compteur a zero.
+
 ## Mise en place
 
 Le code est en place ; il reste deux reglages a faire dans l'interface GitHub,

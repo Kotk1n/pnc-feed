@@ -30,12 +30,33 @@ jobs:
 
       - name: Commiter si le contenu a change
         run: |
-          if [ -z "$(git status --porcelain docs/pnc.rss)" ]; then
-            echo "Aucun changement."
-            exit 0
+          set -euo pipefail
+
+          if [ -n "$(git status --porcelain docs/pnc.rss)" ]; then
+            message="Mise a jour du miroir du flux PNC"
+          else
+            # GitHub desactive les workflows planifies apres 60 jours sans
+            # activite sur le depot. Comme on ne commite qu'a la parution d'un
+            # billet, un blog silencieux deux mois suffirait a arreter le cron
+            # -- et le miroir se figerait sans rien signaler. On force donc une
+            # activite bien avant l'echeance.
+            age_days=$(( ( $(date +%s) - $(git log -1 --format=%ct) ) / 86400 ))
+            echo "Flux inchange ; dernier commit il y a ${age_days} jour(s)."
+            if [ "$age_days" -lt "$HEARTBEAT_AFTER_DAYS" ]; then
+              echo "Rien a commiter."
+              exit 0
+            fi
+            date -u +"%Y-%m-%dT%H:%M:%SZ" > .heartbeat
+            message="Heartbeat : maintenir le workflow planifie actif"
           fi
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/pnc.rss
-          git commit -m "Mise a jour du miroir du flux PNC"
+          git add docs/pnc.rss .heartbeat
+          git commit -m "$message"
           git push
+          echo "Commite : $message"
+        env:
+          # Large marge sous la limite des 60 jours, pour absorber les reports
+          # de cron que GitHub applique en periode de charge.
+          HEARTBEAT_AFTER_DAYS: 50
