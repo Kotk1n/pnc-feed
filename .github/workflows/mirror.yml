@@ -1,0 +1,41 @@
+name: Miroir du flux PNC
+
+on:
+  schedule:
+    # Toutes les heures. GitHub decale les crons planifies en periode de
+    # charge, ce qui est sans importance pour un blog qui publie par mois.
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+# Le job commite le flux regenere ; Pages redeploie ensuite tout seul.
+permissions:
+  contents: write
+
+concurrency:
+  group: mirror
+  cancel-in-progress: false
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Regenerer le flux
+        run: python3 normalize_feed.py
+
+      - name: Commiter si le contenu a change
+        run: |
+          if [ -z "$(git status --porcelain docs/pnc.rss)" ]; then
+            echo "Aucun changement."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/pnc.rss
+          git commit -m "Mise a jour du miroir du flux PNC"
+          git push
