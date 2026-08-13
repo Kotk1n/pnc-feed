@@ -5,9 +5,37 @@
 <link>https://blog.projectnightcrawler.dev/posts/</link>
 <description>Miroir normalise du flux Posts on PNC Blog</description>
 <language>en</language>
-<lastBuildDate>Tue, 11 Aug 2026 21:56:00 +0200</lastBuildDate>
+<lastBuildDate>Fri, 14 Aug 2026 00:55:00 +0200</lastBuildDate>
 <generator>pnc-feed-mirror (source: https://blog.projectnightcrawler.dev/posts/index.xml)</generator>
 <atom:link href="https://kotk1n.github.io/pnc-feed/pnc.rss" rel="self" type="application/rss+xml"/>
+<item>
+<title>What other options do I have</title>
+<link>https://blog.projectnightcrawler.dev/posts/2026-08-13-what-other-options-do-i-have/</link>
+<guid isPermaLink="true">https://blog.projectnightcrawler.dev/posts/2026-08-13-what-other-options-do-i-have/</guid>
+<pubDate>Fri, 14 Aug 2026 00:55:00 +0200</pubDate>
+<description>&lt;pre tabindex=&quot;0&quot;&gt;&lt;code&gt;-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Microsoft just refuses any sort of communication, always ghosting me even when I ask for anything.
+Pretty sure they have an absolute don&amp;#39;t reply to him policy over there, it&amp;#39;s not doing them any favours for now.
+I can&amp;#39;t even report the bugs I find to their respective vendors because of the restrictions by Microsoft, all of this is of their own doing and you know, they don&amp;#39;t even bother to check my case to figure out what&amp;#39;s wrong. I asked for something very simple that Microsoft could easily do to help me and this entire dilemma but got told to go fuck myself (in corpo grammar obviously)
+
+Think I will start publishing bugs for third parties in that window where patch tuesday isn&amp;#39;t released yet. I have a bunch, just haven&amp;#39;t been in mood to check any of them + didn&amp;#39;t eat anything for like 2 days so I got no energy and sleeping is just a nightmare while waking up is even worst. 
+
+I wish if I did what you actually accused me of, all of this wouldn&amp;#39;t have hurt me as much as it could have if I did the bs you accused me of. If you just do some rational thinking you&amp;#39;ll figure out that I have absolutely zero motives/benefits of doing that bs and I still have no idea what happened exactly.
+
+I was planning to do some tweaks on ShieldBreak but I don&amp;#39;t even have enough energy to get out of bed, the one thing I&amp;#39;m constantly thinking about is I will eventually get kicked out of my place and I have nowhere else to go... If you hate me that much Microsoft why not just shoot me in the back of my head and be done with it, don&amp;#39;t waste time. Isn&amp;#39;t that what big corporations do ? Just murder anyone who disagrees with them ? Please hurry up I don&amp;#39;t want to wait any longer...
+
+I just want to live like a normal human being for once in my life, is that too much to ask for...?
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYKAB0WIQRJTvAf/AWVhAKEeb7FFoRCS0/SbAUCan5O+wAKCRDFFoRCS0/S
+bNfPAQDzcvkCaaf8XlrU5fefvF2KG34VPuJVZGfSl+pfH+a5YQD/UvL/ye33lMsG
+kJH0htmj3wSLEZILGPoTyhPbWJ/hXQg=
+=EXVn
+-----END PGP SIGNATURE-----
+&lt;/code&gt;&lt;/pre&gt;</description>
+</item>
 <item>
 <title>ShieldBreak - August 2026 disclosure</title>
 <link>https://blog.projectnightcrawler.dev/posts/2026-08-11-shieldbreak-august-2026-disclosure/</link>
