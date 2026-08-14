@@ -5,9 +5,43 @@
 <link>https://blog.projectnightcrawler.dev/posts/</link>
 <description>Miroir normalise du flux Posts on PNC Blog</description>
 <language>en</language>
-<lastBuildDate>Fri, 14 Aug 2026 06:19:00 +0200</lastBuildDate>
+<lastBuildDate>Fri, 14 Aug 2026 11:13:00 +0200</lastBuildDate>
 <generator>pnc-feed-mirror (source: https://blog.projectnightcrawler.dev/posts/index.xml)</generator>
 <atom:link href="https://kotk1n.github.io/pnc-feed/pnc.rss" rel="self" type="application/rss+xml"/>
+<item>
+<title>Remember CVE-2010-2743 ?</title>
+<link>https://blog.projectnightcrawler.dev/posts/2026-08-14-remember-cve-2010-2743/</link>
+<guid isPermaLink="true">https://blog.projectnightcrawler.dev/posts/2026-08-14-remember-cve-2010-2743/</guid>
+<pubDate>Fri, 14 Aug 2026 11:13:00 +0200</pubDate>
+<description>&lt;pre tabindex=&quot;0&quot;&gt;&lt;code&gt;-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Obviously this won&amp;#39;t ring any bells for any of you but it&amp;#39;s the CVE assigned a win32k vulnerability that was exploited in stuxnet.
+
+This vulnerability was caused by win32k parsing an untrusted keyboard layout binary in the kernel, after inspecting the binaries before the patch it turns out Microsoft had a problem with that specific syscall for waaay too long.
+In the beginning, the win32k subsystem used to map the file by creating a section supplied by an untrusted user handle, meaning that the caller process could simply change the file content after the sanity checks and cause a memory corruption, after many vulnerability reports by research that implementation was changed to now use ZwReadFile to read file content into kernel memory thus preventing any potential tampering with the file after sanitization.
+
+The problems however continued even past the stuxnet patch as the attack surface was waaay too enormous to be fixed that easily so Microsoft resorted into another mitigation that completely blocked the attack surface.
+After MS12-034, new check was implemented when attempting to load a keyboard layout file, win32kbase!ConvertHandleAndVerifyLoc now mandates that the file has to be in a trusted system directory (System32, SysWow64, SysArm32) before it can be load otherwise the request is rejected.
+One major oversight about this mitigation is the fact that alternative data streams were not considered, meaning that something like C:\Windows\System32\Tasks:t.kbd will be considered trusted by the kernel and will be allowed to be loaded, this is a problem because standard users can create ADS files in the tasks directory resulting in untrusted .kbd files being parsed by the kernel.
+
+Now it took me a long time to figure why in the world the files created by you in Tasks directory ADS will be owned by SYSTEM and not you and will inherit the DACL from the Tasks directory, which allows you to write to the file but not read it. You will ask why do you need read access ? It&amp;#39;s because its needed by NtUserLoadKeyboardEx so if you don&amp;#39;t have read access then your file is pointless.
+I figured it out very recently, it turns out it&amp;#39;s a bug in NTFS that causes this and eventually found a way to regain read access after creation resulting in an untrusted keyboard layout file to be loaded by the kernel.
+
+I got a PoC and everything but after giving it long thoughts, I decided to not release it because of two reasons,
+1. I might get waay too much troubles for releasing this than I&amp;#39;m willing to handle.
+2. The technique to read the file will get patched and I think I will need it later.
+
+So basically all I wrote above is a big &amp;#34;trust me bro&amp;#34;, it&amp;#39;s up to you to either believe it or not but personally I think Microsoft should patch this.
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYKAB0WIQRJTvAf/AWVhAKEeb7FFoRCS0/SbAUCan7l0AAKCRDFFoRCS0/S
+bH5XAP9YB+zOA91VTChqfuxQkQuTIGe/lgzLhiu4eGFXi7PxpgEA4NmDoPvXyU7y
+4I4cgYr2godl3T61UHP6q+HgYNPNTgg=
+=hlMU
+-----END PGP SIGNATURE-----
+&lt;/code&gt;&lt;/pre&gt;</description>
+</item>
 <item>
 <title>Just cut the lies already.</title>
 <link>https://blog.projectnightcrawler.dev/posts/2026-08-14-just-cut-the-lies-already/</link>
