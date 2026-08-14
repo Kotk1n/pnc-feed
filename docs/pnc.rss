@@ -5,9 +5,27 @@
 <link>https://blog.projectnightcrawler.dev/posts/</link>
 <description>Miroir normalise du flux Posts on PNC Blog</description>
 <language>en</language>
-<lastBuildDate>Fri, 14 Aug 2026 00:55:00 +0200</lastBuildDate>
+<lastBuildDate>Fri, 14 Aug 2026 06:19:00 +0200</lastBuildDate>
 <generator>pnc-feed-mirror (source: https://blog.projectnightcrawler.dev/posts/index.xml)</generator>
 <atom:link href="https://kotk1n.github.io/pnc-feed/pnc.rss" rel="self" type="application/rss+xml"/>
+<item>
+<title>Just cut the lies already.</title>
+<link>https://blog.projectnightcrawler.dev/posts/2026-08-14-just-cut-the-lies-already/</link>
+<guid isPermaLink="true">https://blog.projectnightcrawler.dev/posts/2026-08-14-just-cut-the-lies-already/</guid>
+<pubDate>Fri, 14 Aug 2026 06:19:00 +0200</pubDate>
+<description>&lt;pre tabindex=&quot;0&quot;&gt;&lt;code&gt;-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Also cut the crap, you&amp;#39;re trying hard to paint me as some insane criminal, no one is buying it and those statements about &amp;#34;uncoordinated disclosures&amp;#34; and stuff, you&amp;#39;re just making a fool of yourself.
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYKAB0WIQRJTvAf/AWVhAKEeb7FFoRCS0/SbAUCan6XNAAKCRDFFoRCS0/S
+bGxYAQC7aSaed2nwwycAPoexPQSypGftR1r5NgzVC7iSknzdxAEA4XGzl25ubxYL
+5dNWtqT0U+tBYlRDamm6npwb8ncUegE=
+=4LPE
+-----END PGP SIGNATURE-----
+&lt;/code&gt;&lt;/pre&gt;</description>
+</item>
 <item>
 <title>What other options do I have</title>
 <link>https://blog.projectnightcrawler.dev/posts/2026-08-13-what-other-options-do-i-have/</link>
