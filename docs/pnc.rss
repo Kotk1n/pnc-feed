@@ -5,9 +5,33 @@
 <link>https://blog.projectnightcrawler.dev/posts/</link>
 <description>Miroir normalise du flux Posts on PNC Blog</description>
 <language>en</language>
-<lastBuildDate>Fri, 14 Aug 2026 11:13:00 +0200</lastBuildDate>
+<lastBuildDate>Fri, 18 Sep 2026 18:49:00 +0200</lastBuildDate>
 <generator>pnc-feed-mirror (source: https://blog.projectnightcrawler.dev/posts/index.xml)</generator>
 <atom:link href="https://kotk1n.github.io/pnc-feed/pnc.rss" rel="self" type="application/rss+xml"/>
+<item>
+<title>Addressing some confusion</title>
+<link>https://blog.projectnightcrawler.dev/posts/2026-09-18-addressing-some-confusion/</link>
+<guid isPermaLink="true">https://blog.projectnightcrawler.dev/posts/2026-09-18-addressing-some-confusion/</guid>
+<pubDate>Fri, 18 Sep 2026 18:49:00 +0200</pubDate>
+<description>&lt;pre tabindex=&quot;0&quot;&gt;&lt;code&gt;-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+This blog is not owned by but managed by a close third party, the email here is not how you contact me, use msnightmare@proton.me 
+
+And you only trust the pgp signed message using the original key from here,
+
+https://deadeclipse666.blogspot.com/2026/04/pgp-key.html
+
+The email and key here are not from me and controlled by a different trusted party.
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYKAB0WIQRJTvAf/AWVhAKEeb7FFoRCS0/SbAUCaq1sfwAKCRDFFoRCS0/S
+bBnVAP9B6WvaSuu5k5kgFuYqkf1Dt5+Tui0XFVBxC+wBsuaaQgEAt3RkZRu8e0Hp
+c4BdUyUgBeUeYBbe1LkeTZ5+hUtjcAc=
+=zSsf
+-----END PGP SIGNATURE-----
+&lt;/code&gt;&lt;/pre&gt;</description>
+</item>
 <item>
 <title>Remember CVE-2010-2743 ?</title>
 <link>https://blog.projectnightcrawler.dev/posts/2026-08-14-remember-cve-2010-2743/</link>
